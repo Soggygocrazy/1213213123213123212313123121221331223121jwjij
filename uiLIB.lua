@@ -3,6 +3,14 @@ local UI = {}
 -- Define the library
 function UI.new()
     local self = {}
+    self.windows = {}
+    return self
+end
+
+-- Define the window class
+function UI.Window(name)
+    local self = {}
+    self.name = name
     self.pages = {}
     return self
 end
@@ -79,6 +87,13 @@ function UI.ColorPicker(name, def, callback)
     self.def = def
     self.callback = callback
     return self
+end
+
+-- Define window creation function
+function UI.newWindow(name)
+    local window = UI.Window(name)
+    table.insert(UI.windows, window)
+    return window
 end
 
 return UI
