@@ -92,7 +92,7 @@ end
 -- Define window creation function
 function UI.newWindow(name)
     local window = UI.Window(name)
-    table.insert(UI.windows, window)  -- Make sure UI.windows is initialized as an empty table
+    table.insert(UI.windows, window)
     return window
 end
 
